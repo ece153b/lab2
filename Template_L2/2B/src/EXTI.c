@@ -11,10 +11,15 @@
 
 void EXTI_Init(void) {
 	// Initialize User Button
-	// [TODO]
+	RCC->AHB2ENR |= RCC_AHB2ENR_GPIOCEN;
+	GPIOC->MODER &= ~(GPIO_MODER_MODE13); //Set PC13 to input
+	GPIOC->PUPDR &= ~(GPIO_PUPDR_PUPD13); //Set PC13 to no pull up no pull down
+
 	
 	// Configure SYSCFG EXTI
-	// [TODO]
+	SYSCFG->EXTICR[3] &= ~SYSCFG_EXTICR1_EXTI4;//double check
+	SYSCFG->EXTICR[3] |= ~SYSCFG_EXTICR1_EXTI4;
+
 	
 	// Configure EXTI Trigger
 	// [TODO]
