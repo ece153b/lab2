@@ -38,10 +38,11 @@ void GPIO_Init(void){
 }
 
 
-#define DELAY 60000	// delay between steps of the sequences
+#define DELAY 1000	// delay between steps of the sequences
 
 void Full_Stepping_Clockwise(void){
 	//Step 1
+	//printf("Entered");
 	GPIOC->ODR &= ~(GPIO_ODR_OD5); 
 	GPIOC->ODR |= GPIO_ODR_OD6; 
 	GPIOC->ODR |= GPIO_ODR_OD8; 
@@ -93,4 +94,8 @@ int main(void){
 	
 	// Rotate 360 degrees either clockwise or counter-clockwise
 	Full_Stepping_Clockwise(); 
+	/*while(1)
+	{
+		Full_Stepping_Clockwise(); 
+	}*/
 }
