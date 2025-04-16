@@ -102,7 +102,12 @@ void RTC_Init(void) {
 #define RTC_POSITION_DR_WDU   (uint32_t)POSITION_VAL(RTC_DR_WDU)
 
 void RTC_Set_Calendar_Date(uint32_t WeekDay, uint32_t Day, uint32_t Month, uint32_t Year) {
-	// [TODO] Write the date values in the correct place within the RTC Date Register
+	Year = Year << RTC_POSITION_DR_YU; 
+	WeekDay = WeekDay << RTC_POSITION_DR_WDU; 
+	Month = Month << RTC_POSITION_DR_MU;
+	Day = Day << RTC_POSITION_DR_DU; 
+	
+	RTC->DR |= Year | WeekDay | Month | Day;  	
 }
 
 void RTC_Set_Time(uint32_t Format12_24, uint32_t Hour, uint32_t Minute, uint32_t Second) {
@@ -147,11 +152,12 @@ void RTC_Clock_Init(void) {
 }
 
 void RTC_Disable_Write_Protection(void) {
-	// [TODO]
+	RTC->WPR = 0xCA;
+	RTC->WPR = 0X53;
 }
 	
 void RTC_Enable_Write_Protection(void) {
-	// [TODO]
+	RTC->WPR = 0X00;
 }
 
 uint32_t RTC_TIME_GetHour(void) {
