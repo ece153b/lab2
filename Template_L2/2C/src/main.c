@@ -41,7 +41,7 @@ void RTC_Set_Alarm(void) {
 	RTC->ALRMAR &= ~(RTC_ALRMAR_MSK1); 
 	RTC->ALRMAR &= ~(RTC_ALRMAR_ST); //Clear tens seconds register
 	RTC->ALRMAR &= ~(RTC_ALRMAR_SU); //Clear unit seconds register
-	RTC->ALRMAR |= (0x01 << 4); 	 //Set tens seconds regisiter to 3
+	RTC->ALRMAR |= (0x03 << 4); 	 //Set tens seconds regisiter to 3
 	RTC->ALRMAR |= (0X00 << 0); 	 //Set units seconds register to 0
 		
 	//Set alarm B for every 1 seconds
@@ -83,12 +83,13 @@ void RTC_Alarm_Enable(void) {
 
 void RTC_Alarm_IRQHandler(void) {
 	// Clear interrupt pending bit
+	/*
 	Green_LED_Toggle(); 
-	
 	RTC->ISR &= ~(RTC_ISR_ALRAF); 
 	RTC->ISR &= ~(RTC_ISR_ALRBF); 
 	EXTI->PR1 |= EXTI_PR1_PIF18;
-	/*
+	*/
+	
 	if((RTC->ISR & RTC_ISR_ALRAF) == RTC_ISR_ALRAF)
 	{
 		//Alarm A
@@ -103,7 +104,7 @@ void RTC_Alarm_IRQHandler(void) {
 		EXTI->PR1 |= EXTI_PR1_PIF18;
 		RTC->ISR &= ~(RTC_ISR_ALRBF); 
 	}
-	*/
+
 
 }
 
