@@ -67,7 +67,7 @@ void RTC_Init(void) {
 	// Configure the Date 
 	/* Note: __LL_RTC_CONVERT_BIN2BCD helper macro can be used if user wants to */
 	/*       provide directly the decimal value:                                */
-	RTC_Set_Calendar_Date(RTC_WEEKDAY_WEDNESDAY, 0x01, RTC_MONTH_APRIL, 0x16); /* [TODO] These values are stubs - fill in current date */
+	RTC_Set_Calendar_Date(RTC_WEEKDAY_WEDNESDAY, 0x17, RTC_MONTH_APRIL, 0x16); /* [TODO] These values are stubs - fill in current date */
 	
 	// Configure the Time 
 	RTC_Set_Time(RTC_TR_PM, 0x05, 0x47, 0x00); /* [TODO] These values are stubs - fill in current time */
@@ -102,21 +102,21 @@ void RTC_Init(void) {
 #define RTC_POSITION_DR_WDU   (uint32_t)POSITION_VAL(RTC_DR_WDU)
 
 void RTC_Set_Calendar_Date(uint32_t WeekDay, uint32_t Day, uint32_t Month, uint32_t Year) {
-	Year = Year << RTC_POSITION_DR_YU; 
+	/*Year = Year << RTC_POSITION_DR_YU; 
 	WeekDay = WeekDay << RTC_POSITION_DR_WDU; 
 	Month = Month << RTC_POSITION_DR_MU;
 	Day = Day << RTC_POSITION_DR_DU; 
 	
-	RTC->DR = Year | WeekDay | Month | Day;  	
+	RTC->DR = Year | WeekDay | Month | Day;  	*/
 }
 
 void RTC_Set_Time(uint32_t Format12_24, uint32_t Hour, uint32_t Minute, uint32_t Second) {
 	//figure out what to do with format
-	Hour = Hour << RTC_POSITION_TR_HU; 
+	/*Hour = Hour << RTC_POSITION_TR_HU; 
 	Minute = Minute << RTC_POSITION_TR_MU;
 	Second = Second << RTC_POSITION_TR_SU; 
 	
-	RTC->TR = Format12_24 | Hour | Minute | Second; 
+	RTC->TR = Format12_24 | Hour | Minute | Second; */
 	
 }
 
