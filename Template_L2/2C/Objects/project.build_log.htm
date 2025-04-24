@@ -5,7 +5,7 @@
 <h2>Tool Versions:</h2>
 IDE-Version: µVision V5.39.0.0
 Copyright (C) 2023 ARM Ltd and ARM Germany GmbH. All rights reserved.
-License Information: Pablo Landriz, UCSB, LIC=----
+License Information: Pablo Landriz, University of California, Santa Barbara, LIC=----
  
 Tool Versions:
 Toolchain:       MDK-Lite  Version: 5.39.0.0
@@ -21,45 +21,21 @@ Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.2.0.0
 Dialog DLL:      TCM.DLL V1.56.4.0
  
 <h2>Project:</h2>
-C:\Users\vseenivasan\Downloads\lab2-main\lab2-main\Template_L2\2C\project.uvprojx
-Project File Date:  04/16/2025
+C:\Users\adenjo\Downloads\lab2-main\lab2-main\Template_L2\2C\project.uvprojx
+Project File Date:  04/23/2025
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.21', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
 Build target 'Target 1'
-src/RTC.c(40): warning: no previous prototype for function 'RTC_BAK_SetRegister' [-Wmissing-prototypes]
-   40 | void RTC_BAK_SetRegister(uint32_t BackupRegister, uint32_t Data) {
-      |      ^
-src/RTC.c(40): note: declare 'static' if the function is not intended to be used outside of this translation unit
-   40 | void RTC_BAK_SetRegister(uint32_t BackupRegister, uint32_t Data) {
-      | ^
-      | static 
-src/RTC.c(186): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
-  186 |         uint32_t month_tens = RTC->DR; 
-      |                  ^
-src/RTC.c(200): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
-  200 |         uint32_t day_tens = RTC->DR; 
-      |                  ^
-src/RTC.c(214): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
-  214 |         uint32_t year_tens = RTC->DR; 
-      |                  ^
-src/RTC.c(228): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
-  228 |         uint32_t weekday_tens = RTC->DR; 
-      |                  ^
-5 warnings generated.
-compiling RTC.c...
-linking...
-Program Size: Code=9696 RO-data=992 RW-data=0 ZI-data=1656  
-FromELF: creating hex file...
-".\Objects\project.axf" - 0 Error(s), 5 Warning(s).
+".\Objects\project.axf" - 0 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
 
 Package Vendor: ARM
-                https://www.keil.com/pack/ARM.CMSIS.6.1.0.pack
-                ARM::CMSIS@6.1.0
+                http://www.keil.com/pack/ARM.CMSIS.5.9.0.pack
+                ARM::CMSIS@5.9.0
                 CMSIS (Common Microcontroller Software Interface Standard)
-   * Component: CORE Version: 6.1.0
+   * Component: CORE Version: 5.6.0
 
 Package Vendor: Keil
                 https://www.keil.com/pack/Keil.STM32L4xx_DFP.2.7.0.pack
@@ -68,12 +44,12 @@ Package Vendor: Keil
 
 <h2>Collection of Component include folders:</h2>
   ./RTE/_Target_1
-  C:/Keil_v5/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include
+  C:/Keil_v5/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include
   C:/Keil_v5/Packs/Keil/STM32L4xx_DFP/2.7.0/Drivers/CMSIS/Device/ST/STM32L4xx/Include
 
 <h2>Collection of Component Files used:</h2>
 
-   * Component: ARM::CMSIS:CORE@6.1.0
+   * Component: ARM::CMSIS:CORE@5.6.0
 Build Time Elapsed:  00:00:00
 </pre>
 </body>

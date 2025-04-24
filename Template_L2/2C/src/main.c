@@ -56,10 +56,10 @@ void RTC_Set_Alarm(void) {
 	*/
 
 	//Enable both alarms - COMMENT OUT UNNEEDED ALARM HERE
-	RTC->CR |= RTC_CR_ALRAE; 
-	//RTC->CR |= RTC_CR_ALRBE;
-	RTC->CR |= RTC_CR_ALRAIE; 
-	//RTC->CR |= RTC_CR_ALRBIE; 
+	//RTC->CR |= RTC_CR_ALRAE; 
+	RTC->CR |= RTC_CR_ALRBE;
+	//RTC->CR |= RTC_CR_ALRAIE; 
+	RTC->CR |= RTC_CR_ALRBIE; 
 	
 	//Enable write protection
 	RTC_Enable_Write_Protection(); 
@@ -118,6 +118,6 @@ int main(void) {
 	RTC_Set_Alarm();
 	
 	while(1) {
-		//Get_RTC_Calendar(strTime, strDate); 
+		Get_RTC_Calendar(strTime, strDate); 
 	}
 }
